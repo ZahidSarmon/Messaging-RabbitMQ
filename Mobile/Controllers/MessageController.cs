@@ -19,7 +19,7 @@ public class MessageController : ControllerBase
     {
         int id = Random.Shared.Next(1,99);
 
-        await _bus.Publish(new MessageRecord(id,message));
+        await _bus.Publish(new MessageDTO(id,message));
 
         return Ok(new {id,message});
     }
